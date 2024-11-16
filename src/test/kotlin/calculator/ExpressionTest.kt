@@ -11,7 +11,7 @@ class ExpressionTest {
         assertThat(
             assertThrows<IllegalArgumentException> {
                 Expression(InputView("1 + 5 * 7 -"))
-            }.message
+            }.message,
         ).isEqualTo("피연산자와 연산기호의 수가 올바르지 않습니다")
     }
 
@@ -20,7 +20,7 @@ class ExpressionTest {
         assertThat(
             assertThrows<IllegalArgumentException> {
                 Expression(InputView("x 1 5 2xxx 8y"))
-            }.message
+            }.message,
         ).isEqualTo("피연산자와 연산기호의 수가 올바르지 않습니다")
     }
 

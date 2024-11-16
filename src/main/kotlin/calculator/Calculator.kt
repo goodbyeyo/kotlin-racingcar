@@ -7,17 +7,17 @@ class Calculator(
         var result = Operand(expression.operands.numbers[0].number).number
         val numbers = expression.operands.numbers
         val operands = expression.symbols.operators
-        for (i in 0 until numbers.size-1) {
+        for (i in 0 until numbers.size - 1) {
             validateDivisionNumber(operands, i, numbers)
-            result = Operator.of(operands[i]).operate(result, numbers[i+1].number)
+            result = Operator.of(operands[i]).operate(result, numbers[i + 1].number)
         }
-        return Operand(result);
+        return Operand(result)
     }
 
     private fun validateDivisionNumber(
         operands: List<String>,
         i: Int,
-        numbers: List<Operand>
+        numbers: List<Operand>,
     ) {
         if (operands[i] == Operator.DIVISION.symbol && numbers[i + 1].number == 0) {
             throw IllegalArgumentException(CAN_NOT_DIVIDE_ZERO)

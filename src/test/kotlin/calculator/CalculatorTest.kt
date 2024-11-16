@@ -6,13 +6,12 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class CalculatorTest {
-
     @Test
     fun `0으로 나눌수 없다`() {
         assertThat(
             assertThrows<IllegalArgumentException> {
                 Calculator(Expression(InputView("1 + 4 * 3 - 5 / 0"))).calculate()
-            }.message
+            }.message,
         ).isEqualTo("0으로 나눌 수 없습니다")
     }
 

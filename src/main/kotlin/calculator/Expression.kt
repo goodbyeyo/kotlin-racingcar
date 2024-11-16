@@ -5,6 +5,7 @@ import calculator.view.InputView
 data class Expression(val inputView: InputView) {
     val operands: Operands
     val symbols: Symbols
+
     init {
         val formulas = inputView.text.split(DELIMITER)
         val delimitedString = groupByFormulas(formulas)
