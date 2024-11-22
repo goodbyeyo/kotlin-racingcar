@@ -3,7 +3,7 @@ package racingcar.dto
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.inspectors.forAll
-import racingcar.domain.PositiveNum
+import racingcar.domain.PositiveNumber
 
 class UserInputTest : BehaviorSpec({
     val negativeNumer = "-5"
@@ -13,7 +13,7 @@ class UserInputTest : BehaviorSpec({
             Then("예외가 발생한다") {
                 negativeNumbers.forAll {
                     shouldThrow<IllegalArgumentException> {
-                        UserInput(PositiveNum(negativeNumer), PositiveNum(positiveNumber))
+                        UserInput(PositiveNumber(negativeNumer), PositiveNumber(positiveNumber))
                     }
                 }
             }
@@ -23,7 +23,7 @@ class UserInputTest : BehaviorSpec({
             Then("예외가 발생한다") {
                 negativeNumbers.forAll {
                     shouldThrow<IllegalArgumentException> {
-                        UserInput(PositiveNum(positiveNumber), PositiveNum(negativeNumer))
+                        UserInput(PositiveNumber(positiveNumber), PositiveNumber(negativeNumer))
                     }
                 }
             }

@@ -11,7 +11,7 @@ class CarsTest {
         count: String,
         createdCount: Int,
     ) {
-        val cars = Cars(PositiveNum(count))
+        val cars = Cars(PositiveNumber(count))
         val carCount = cars.count()
         carCount shouldBe createdCount
     }

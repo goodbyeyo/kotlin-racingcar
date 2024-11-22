@@ -1,8 +1,8 @@
 package racingcar.dto
 
-import racingcar.domain.PositiveNum
+import racingcar.domain.PositiveNumber
 
 class UserInput(
-    val carNumber: PositiveNum,
-    val gameRound: PositiveNum,
+    val carNumber: PositiveNumber,
+    val gameRound: PositiveNumber,
 )

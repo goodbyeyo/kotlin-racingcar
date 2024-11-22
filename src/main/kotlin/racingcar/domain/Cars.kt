@@ -1,6 +1,6 @@
 package racingcar.domain
 
-class Cars(count: PositiveNum) {
+class Cars(count: PositiveNumber) {
     private val cars: MutableList<Car>
 
     init {
@@ -8,7 +8,7 @@ class Cars(count: PositiveNum) {
         createCars(count)
     }
 
-    private fun createCars(count: PositiveNum): List<Car> {
+    private fun createCars(count: PositiveNumber): List<Car> {
         for (i: Int in 1..count.number) {
             cars.add(Car())
         }
