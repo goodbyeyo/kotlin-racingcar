@@ -28,7 +28,7 @@ class CarTest {
     }
 
     @Test
-    fun `자동차를 이동전략으로 이동하면 점수가 1 오른다`() {
+    fun `자동차를 전진전략으로 이동하면 점수가 1 오른다`() {
         val car = Car(3)
         car.move(MovableNumberGeneratorStrategy())
         car.point shouldBe 4
