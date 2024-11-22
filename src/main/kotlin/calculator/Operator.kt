@@ -7,7 +7,10 @@ enum class Operator(
     ADDITION("+", { a, b -> a + b }),
     SUBTRACTION("-", { a, b -> a - b }),
     MULTIPLY("*", { a, b -> a * b }),
-    DIVISION("/", { a, b -> a / b }), ;
+    DIVISION("/", { a, b ->
+        require(b != 0) { "0으로 나눌 수 없습니다" }
+        a / b
+    }), ;
 
     companion object {
         private const val INCORRECT_OPERATOR = "올바른 사칙연산 기호가 아닙니다"

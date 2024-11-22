@@ -10,7 +10,7 @@ class InputTest {
     fun `연산문자열에 공백값을 입력할수 없다`() {
         assertThat(
             assertThrows<IllegalArgumentException> {
-                InputView("  ")
+                InputView(Input("  "))
             }.message,
         ).isEqualTo("text should be not blank")
     }
@@ -19,7 +19,7 @@ class InputTest {
     fun `연산문자열에 빈값을 입력할수 없다`() {
         assertThat(
             assertThrows<IllegalArgumentException> {
-                InputView("")
+                InputView(Input(""))
             }.message,
         ).isEqualTo("text should be not empty")
     }

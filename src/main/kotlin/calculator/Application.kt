@@ -8,6 +8,6 @@ fun main() {
     if (inputText == InputView.PROGRAM_END_TEXT) {
         return
     }
-    val result = Calculator(Expression(InputView(inputText))).calculate()
+    val result = Calculator(Expression(InputView(Input(inputText)))).calculate()
     OutputView.printResult(result)
 }

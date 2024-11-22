@@ -1,13 +1,10 @@
 package calculator.view
 
-data class InputView(
-    val text: String,
-) {
-    init {
-        require(text.isNotEmpty()) { "text should be not empty" }
-        require(text.isNotBlank()) { "text should be not blank" }
-    }
+import calculator.Input
 
+class InputView(
+    val intput: Input,
+) {
     companion object {
         const val PROGRAM_END_TEXT = "exit"
 
