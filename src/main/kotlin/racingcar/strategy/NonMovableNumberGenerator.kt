@@ -1,17 +1,15 @@
 package racingcar.strategy
 
-class NonMovableNumberGenerator: NumberGeneratorStrategy {
+class NonMovableNumberGenerator : NumberGeneratorStrategy {
     override fun generateNumber(): Int {
         return NON_MOVABLE_CONDITION
     }
 
     override fun isMovable(number: Int): Boolean {
-        return false;
+        return false
     }
 
     companion object {
-        private const val NON_MOVABLE_CONDITION = 3;
+        private const val NON_MOVABLE_CONDITION = 3
     }
-
-
 }

@@ -1,4 +1,3 @@
 package racingcar
 
-class RacingCarApplication {
-}
+class RacingCarApplication

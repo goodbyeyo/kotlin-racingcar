@@ -1,6 +1,6 @@
 package racingcar.strategy
 
-class RandomNumberGeneratorStrategy: NumberGeneratorStrategy {
+class RandomNumberGeneratorStrategy : NumberGeneratorStrategy {
     override fun generateNumber(): Int {
         return range.random()
     }

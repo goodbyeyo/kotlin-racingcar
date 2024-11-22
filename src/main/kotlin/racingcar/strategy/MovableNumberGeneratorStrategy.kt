@@ -1,6 +1,6 @@
 package racingcar.strategy
 
-class MovableNumberGeneratorStrategy: NumberGeneratorStrategy {
+class MovableNumberGeneratorStrategy : NumberGeneratorStrategy {
     override fun generateNumber(): Int {
         return MOVABLE_CONDITION
     }

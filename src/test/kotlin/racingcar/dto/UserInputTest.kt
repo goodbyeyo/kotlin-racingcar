@@ -5,7 +5,7 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.inspectors.forAll
 import racingcar.domain.PositiveNum
 
-class UserInputTest: BehaviorSpec({
+class UserInputTest : BehaviorSpec({
     val negativeNumer = "-5"
     val positiveNumber = "2"
     Given("자동차 경주 게임에서 시작 값을 입력할때") {
@@ -31,6 +31,6 @@ class UserInputTest: BehaviorSpec({
     }
 }) {
     companion object {
-        private val negativeNumbers = listOf(-1, -100 ,-55, -555)
+        private val negativeNumbers = listOf(-1, -100, -55, -555)
     }
 }
