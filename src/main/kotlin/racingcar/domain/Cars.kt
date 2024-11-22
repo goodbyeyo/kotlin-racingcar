@@ -9,13 +9,13 @@ class Cars(count: Int) {
     }
 
     private fun createCars(count: Int): List<Car> {
-        for (i in 1..count) {
+        for (i: Int in 1..count) {
             cars.add(Car())
         }
         return cars
     }
 
-    fun findCarsCount(): Int {
+    fun count(): Int {
         return cars.size
     }
 }

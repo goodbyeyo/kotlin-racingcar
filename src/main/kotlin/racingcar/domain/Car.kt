@@ -1,9 +1,17 @@
 package racingcar.domain
 
-class Car {
-    private val point: Int = 0
+import racingcar.strategy.NumberGeneratorStrategy
 
-    fun findCarScore(): Int {
-        return point;
+class Car(
+    var point: Int? = 0
+) {
+    fun move() {
+        point = point!! + 1
+    }
+    fun move(numberGeneratorStrategy: NumberGeneratorStrategy) {
+        if (numberGeneratorStrategy.isMovable(numberGeneratorStrategy.generateNumber())) {
+            point = point!! + 1
+        }
     }
 }
+

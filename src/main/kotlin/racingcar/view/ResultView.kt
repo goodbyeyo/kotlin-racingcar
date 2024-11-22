@@ -1,4 +1,4 @@
 package racingcar.view
 
-class ResultView {
+object ResultView {
 }
