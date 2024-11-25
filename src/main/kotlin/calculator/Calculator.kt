@@ -4,11 +4,11 @@ class Calculator(
     private val expression: Expression,
 ) {
     fun calculate(): Operand {
-        var result = Operand(expression.operands.numbers[0].number).number
+        var result = Operand(expression.findFirstOperand()).number
         val numbers = expression.operands.numbers
         val operators = expression.symbols.operators
-        for (i in 0 until numbers.size - 1) {
-            result = Operator.of(operators[i]).operate(result, numbers[i + 1].number)
+        operators.forEachIndexed { index, operator ->
+            result = Operator.of(operator).operate(result, numbers[index + 1].number)
         }
         return Operand(result)
     }
