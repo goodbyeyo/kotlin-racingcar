@@ -7,9 +7,9 @@ class ScoresTest {
     @Test
     fun `자동차 스코어 목록을 추가 할 수 있다`() {
         val scores = Scores()
-        val score1 = Score(Car(7))
-        val score2 = Score(Car(10))
-        val score3 = Score(Car(5))
+        val score1 = Score(7)
+        val score2 = Score(10)
+        val score3 = Score(5)
         scores.run {
             addScore(score1)
             addScore(score2)
@@ -23,8 +23,8 @@ class ScoresTest {
     @Test
     fun `자동차 스코어 목록을 추가한 횟수와 스코어 사이즈는 같다`() {
         val scores = Scores()
-        val score1 = Score(Car(7))
-        val score2 = Score(Car(10))
+        val score1 = Score(7)
+        val score2 = Score(10)
         scores.run {
             addScore(score1)
             addScore(score2)

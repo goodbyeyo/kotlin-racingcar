@@ -14,4 +14,8 @@ class Scores {
     fun size(): Int {
         return scores.size
     }
+
+    fun addAll(scores: Scores): Scores {
+        return scores.addAll(scores)
+    }
 }

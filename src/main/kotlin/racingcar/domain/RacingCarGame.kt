@@ -19,11 +19,13 @@ class RacingCarGame(
     }
 
     fun race(cars: Cars): Scores {
+
         val scores = Scores()
         for (car in cars.getCarList()) {
             car.move(strategy)
-            scores.addScore(Score(car))
+            scores.addScore(Score(car.findPoint()))
         }
+
         return scores
     }
 }

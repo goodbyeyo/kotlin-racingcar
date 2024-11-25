@@ -1,9 +1,11 @@
 package racingcar.domain
 
 class Score(
-    private val car: Car,
+    private val point: Int
 ) {
+
     fun findPoint(): Int {
-        return car.findPoint()
+        return point
     }
+
 }
