@@ -8,24 +8,21 @@ class ScoreTest {
     fun `차의 위치(점수)를 확인 할 수 있다`() {
         val car = Car(7)
         val score = Score(car.point)
-        val point = score.findPoint()
-        point shouldBe 7
+        score.point shouldBe 7
     }
 
     @Test
     fun `차의 움직이면 변경된 점수를 확인 할 수 있다`() {
         val car = Car(1)
         car.move()
-        val score = Score(car.findPoint())
-        val point = score.findPoint()
-        point shouldBe 2
+        val score = Score(car.point)
+        score.point shouldBe 2
     }
 
     @Test
     fun `생성된 자동차의 초기 위치는 0이다`() {
         val car = Car()
-        val score = Score(car.findPoint())
-        val point = score.findPoint()
-        point shouldBe 0
+        val score = Score(car.point)
+        score.point shouldBe 0
     }
 }

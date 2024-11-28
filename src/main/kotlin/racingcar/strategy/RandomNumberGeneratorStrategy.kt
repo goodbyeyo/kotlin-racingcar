@@ -5,8 +5,8 @@ class RandomNumberGeneratorStrategy : NumberGeneratorStrategy {
         return range.random()
     }
 
-    override fun isMovable(number: Int): Boolean {
-        return number >= MOVABLE_NUMBER_CONDITION
+    override fun isMovable(): Boolean {
+        return generateNumber() >= MOVABLE_NUMBER_CONDITION
     }
 
     companion object {

@@ -2,7 +2,7 @@ package racingcar.dto
 
 import racingcar.domain.PositiveNumber
 
-data class UserInput(
+data class GameCondition(
     val carNumber: PositiveNumber,
     val gameRound: PositiveNumber,
 )

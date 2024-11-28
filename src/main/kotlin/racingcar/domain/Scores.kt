@@ -1,21 +1,19 @@
 package racingcar.domain
 
-class Scores {
-    private val scores: MutableList<Score> = ArrayList()
+class Scores(scores: List<Score>) {
+    private var _scores: MutableList<Score> = scores.map { it.copy() }.toMutableList()
+    private val scores: List<Score>
+        get() = _scores.toList()
 
     fun findAllScores(): List<Score> {
-        return scores
+        return _scores
     }
 
     fun addScore(score: Score) {
-        scores.add(score)
+        _scores.add(score)
     }
 
     fun size(): Int {
-        return scores.size
-    }
-
-    fun addAll(scores: Scores): Scores {
-        return scores.addAll(scores)
+        return _scores.size
     }
 }

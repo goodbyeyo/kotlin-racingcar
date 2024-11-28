@@ -13,7 +13,7 @@ class UserInputTest : BehaviorSpec({
             Then("예외가 발생한다") {
                 negativeNumbers.forAll {
                     shouldThrow<IllegalArgumentException> {
-                        UserInput(PositiveNumber(negativeNumer), PositiveNumber(positiveNumber))
+                        GameCondition(PositiveNumber(negativeNumer), PositiveNumber(positiveNumber))
                     }
                 }
             }
@@ -23,7 +23,7 @@ class UserInputTest : BehaviorSpec({
             Then("예외가 발생한다") {
                 negativeNumbers.forAll {
                     shouldThrow<IllegalArgumentException> {
-                        UserInput(PositiveNumber(positiveNumber), PositiveNumber(negativeNumer))
+                        GameCondition(PositiveNumber(positiveNumber), PositiveNumber(negativeNumer))
                     }
                 }
             }

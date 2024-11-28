@@ -5,7 +5,7 @@ class NonMovableNumberGenerator : NumberGeneratorStrategy {
         return NON_MOVABLE_CONDITION
     }
 
-    override fun isMovable(number: Int): Boolean {
+    override fun isMovable(): Boolean {
         return false
     }
 

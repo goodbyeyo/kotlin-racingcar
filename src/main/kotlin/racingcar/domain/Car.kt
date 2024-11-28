@@ -3,19 +3,18 @@ package racingcar.domain
 import racingcar.strategy.NumberGeneratorStrategy
 
 class Car(
-    var point: Int = 0,
+    point: Int = 0,
 ) {
+    var point: Int = point
+        private set
+
     fun move() {
         point += 1
     }
 
     fun move(numberGeneratorStrategy: NumberGeneratorStrategy) {
-        if (numberGeneratorStrategy.isMovable(numberGeneratorStrategy.generateNumber())) {
+        if (numberGeneratorStrategy.isMovable()) {
             point += 1
         }
-    }
-
-    fun findPoint(): Int {
-        return point
     }
 }

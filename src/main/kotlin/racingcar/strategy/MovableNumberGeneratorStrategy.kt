@@ -5,7 +5,7 @@ class MovableNumberGeneratorStrategy : NumberGeneratorStrategy {
         return MOVABLE_CONDITION
     }
 
-    override fun isMovable(number: Int): Boolean {
+    override fun isMovable(): Boolean {
         return true
     }
 

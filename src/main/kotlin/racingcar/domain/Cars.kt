@@ -1,25 +1,26 @@
 package racingcar.domain
 
 class Cars(count: PositiveNumber) {
-    private val cars: MutableList<Car>
+    private val _cars: MutableList<Car> = ArrayList()
+    private val cars: List<Car>
+        get() = _cars.toList()
 
     init {
-        cars = ArrayList()
         createCars(count)
     }
 
     private fun createCars(count: PositiveNumber): List<Car> {
         for (i: Int in 1..count.number) {
-            cars.add(Car())
+            _cars.add(Car())
         }
-        return cars
+        return _cars
     }
 
     fun count(): Int {
-        return cars.size
+        return _cars.size
     }
 
-    fun getCarList(): List<Car> {
-        return cars
+    fun findAllCars(): List<Car> {
+        return _cars
     }
 }
