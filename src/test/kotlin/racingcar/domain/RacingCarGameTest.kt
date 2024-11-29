@@ -13,7 +13,7 @@ class RacingCarGameTest {
         val carNames = "a,b,c"
         val carCount = PositiveNumber("5")
         val gameRound = PositiveNumber(round)
-        val gameCondition = GameCondition(carNames, gameRound)
+        val gameCondition = GameCondition(carNames, round)
         val racingCarGame = RacingCarGame(gameCondition, RandomNumberGeneratorStrategy())
         val scores = racingCarGame.startGame()
         scores.size shouldBe round.toInt()

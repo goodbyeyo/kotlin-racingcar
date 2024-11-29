@@ -1,7 +1,6 @@
 package racingcar.strategy
 
 class RandomNumberGeneratorStrategy : NumberGeneratorStrategy {
-
     override fun isMovable(): Boolean {
         return range.random() >= MOVABLE_NUMBER_CONDITION
     }

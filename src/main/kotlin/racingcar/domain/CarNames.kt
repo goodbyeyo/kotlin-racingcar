@@ -2,6 +2,7 @@ package racingcar.domain
 
 class CarNames(carNames: List<CarName>) {
     private val _names: MutableList<CarName> = carNames.toMutableList()
+
     private val names: List<CarName>
         get() = _names.toList()
 
@@ -9,7 +10,11 @@ class CarNames(carNames: List<CarName>) {
         return _names
     }
 
-    fun carNameCount(): Int {
+    fun count(): Int {
         return _names.size
+    }
+
+    fun name(index: Int): CarName {
+        return _names[index]
     }
 }
