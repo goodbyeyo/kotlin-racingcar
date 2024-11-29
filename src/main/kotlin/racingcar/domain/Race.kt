@@ -8,7 +8,7 @@ class Race(
 ) {
     fun raceOneRound(): Scores {
         val list = ArrayList<Score>()
-        for (car in cars.findAllCars()) {
+        cars.findAllCars().forEach { car ->
             car.move(strategy)
             list.add(Score(car.point))
         }

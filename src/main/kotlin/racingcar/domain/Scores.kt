@@ -1,7 +1,7 @@
 package racingcar.domain
 
 class Scores(scores: List<Score>) {
-    private var _scores: MutableList<Score> = scores.map { it.copy() }.toMutableList()
+    private val _scores: MutableList<Score> = scores.toMutableList()
     private val scores: List<Score>
         get() = _scores.toList()
 

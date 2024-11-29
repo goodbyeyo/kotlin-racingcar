@@ -1,12 +1,11 @@
 package racingcar.strategy
 
+import racingcar.strategy.RandomNumberGeneratorStrategy.Companion.MOVABLE_NUMBER_CONDITION
+
 class MovableNumberGeneratorStrategy : NumberGeneratorStrategy {
-    override fun generateNumber(): Int {
-        return MOVABLE_CONDITION
-    }
 
     override fun isMovable(): Boolean {
-        return true
+        return MOVABLE_CONDITION >= MOVABLE_NUMBER_CONDITION
     }
 
     companion object {

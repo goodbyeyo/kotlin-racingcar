@@ -23,7 +23,7 @@ object ResultView {
     }
 
     private fun printExpression(score: Score) {
-        for (i in 1 until score.point) {
+        repeat(score.point) {
             print(MOVE_EXPRESSION)
         }
         println()
