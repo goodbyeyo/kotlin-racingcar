@@ -10,7 +10,7 @@ class Cars(count: PositiveNumber) {
     }
 
     private fun createCars(count: PositiveNumber): List<Car> {
-        repeat(count.number) {
+        for (i: Int in 1..count.number) {
             _cars.add(Car())
         }
         return _cars
