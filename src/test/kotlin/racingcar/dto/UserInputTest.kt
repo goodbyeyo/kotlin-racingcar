@@ -7,23 +7,12 @@ import racingcar.domain.PositiveNumber
 
 class UserInputTest : BehaviorSpec({
     val negativeNumer = "-5"
-    val positiveNumber = "2"
     Given("자동차 경주 게임에서 시작 값을 입력할때") {
-        When("자동차 수를 양수가 아닌 수를 입력하면") {
-            Then("예외가 발생한다") {
-                negativeNumbers.forAll {
-                    shouldThrow<IllegalArgumentException> {
-                        GameCondition(PositiveNumber(negativeNumer), PositiveNumber(positiveNumber))
-                    }
-                }
-            }
-        }
-
         When("게임 라운드 수를 양수가 아닌 수를 입력하면") {
             Then("예외가 발생한다") {
                 negativeNumbers.forAll {
                     shouldThrow<IllegalArgumentException> {
-                        GameCondition(PositiveNumber(positiveNumber), PositiveNumber(negativeNumer))
+                        PositiveNumber(negativeNumer)
                     }
                 }
             }

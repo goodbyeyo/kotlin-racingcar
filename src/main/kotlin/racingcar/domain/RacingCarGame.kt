@@ -8,11 +8,12 @@ class RacingCarGame(
     private val strategy: NumberGeneratorStrategy,
 ) {
     fun startGame(): List<Scores> {
-        val cars = Cars(gameCondition.carNumber)
+        val cars = Cars(gameCondition.carNames)
         val rounds = gameCondition.gameRound.number
         val allRoundScore = ArrayList<Scores>()
-        repeat((0 until rounds).count()) {
-            val scores = Race(cars, strategy).raceOneRound()
+        repeat(rounds) {
+            val race = Race(cars, strategy)
+            val scores = race.raceOneRound()
             allRoundScore.add(scores)
         }
         return allRoundScore

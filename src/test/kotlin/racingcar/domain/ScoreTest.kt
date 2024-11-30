@@ -1,6 +1,7 @@
 package racingcar.domain
 
 import io.kotest.matchers.shouldBe
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class ScoreTest {
@@ -25,4 +26,11 @@ class ScoreTest {
         val score = Score(car.point)
         score.point shouldBe 0
     }
+
+    @Test
+    fun `동일한 스코어 인지 확인 할 수 있다`() {
+        val score = Score(7)
+        assertThat(score.isSameScore(7)).isTrue
+    }
+
 }
