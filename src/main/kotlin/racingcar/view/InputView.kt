@@ -1,7 +1,5 @@
 package racingcar.view
 
-import racingcar.domain.CarName
-import racingcar.domain.CarNames
 import racingcar.dto.GameCondition
 
 object InputView {

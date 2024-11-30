@@ -5,6 +5,8 @@ class Scores(scores: List<Score>) {
     private val scores: List<Score>
         get() = _scores.toList()
 
+    constructor() : this(mutableListOf())
+
     fun findAllScores(): List<Score> {
         return _scores
     }
@@ -15,5 +17,28 @@ class Scores(scores: List<Score>) {
 
     fun size(): Int {
         return _scores.size
+    }
+
+    fun score(index: Int): Score {
+        return scores[index]
+    }
+
+    fun findWinner(): Winners {
+        val maxScore = findMaxScore()
+        val winners = Winners()
+        _scores.forEach { score ->
+            if (score.isSameScore(maxScore)) {
+                winners.addWinner(score.carName)
+            }
+        }
+        return winners
+    }
+
+    private fun findMaxScore(): Int {
+        return let {
+            _scores.maxByOrNull {
+                it.point
+            }?.point ?: 0
+        }
     }
 }

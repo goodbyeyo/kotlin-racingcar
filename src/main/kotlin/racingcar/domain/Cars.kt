@@ -1,6 +1,7 @@
 package racingcar.domain
 
 import racingcar.domain.Car.Companion.BLANK_NAME
+import racingcar.strategy.NumberGeneratorStrategy
 
 class Cars(carNames: CarNames, carCount: PositiveNumber) {
     private val _cars: MutableList<Car> = ArrayList()
@@ -23,10 +24,15 @@ class Cars(carNames: CarNames, carCount: PositiveNumber) {
     }
 
     fun count(): Int {
-        return _cars.size
+        return cars.size
     }
 
-    fun findAllCars(): List<Car> {
-        return _cars
+    fun move(strategy: NumberGeneratorStrategy): Scores {
+        val scores = Scores()
+        cars.forEach {
+            it.move(strategy)
+            scores.addScore(Score(it))
+        }
+        return scores
     }
 }

@@ -12,7 +12,7 @@ class Car(
 
     var point: Int = point
         private set
-    private val carName: CarName = name
+    val carName: CarName = name
 
     fun move() {
         point += 1
@@ -22,10 +22,6 @@ class Car(
         if (numberGeneratorStrategy.isMovable()) {
             point += 1
         }
-    }
-
-    fun name(): CarName {
-        return carName
     }
 
     companion object {

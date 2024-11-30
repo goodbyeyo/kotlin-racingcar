@@ -6,15 +6,11 @@ class CarNames(carNames: List<CarName>) {
     private val names: List<CarName>
         get() = _names.toList()
 
-    fun findAllCarNames(): List<CarName> {
-        return _names
-    }
-
     fun count(): Int {
-        return _names.size
+        return names.size
     }
 
     fun name(index: Int): CarName {
-        return _names[index]
+        return names[index]
     }
 }

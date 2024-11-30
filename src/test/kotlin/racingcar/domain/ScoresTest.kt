@@ -1,5 +1,6 @@
 package racingcar.domain
 
+import io.kotest.matchers.collections.shouldContainExactly
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
@@ -25,5 +26,29 @@ class ScoresTest {
         scores.run {
             size() shouldBe 2
         }
+    }
+
+    @Test
+    fun `자동차 경주 우승자 이름을 확인 할 수 있다`() {
+        val score1 = Score(Car(5, CarName("aa")))
+        val score2 = Score(Car(10, CarName("bb")))
+        val score3 = Score(Car(33, CarName("cc")))
+        val scores = Scores(listOf(score1, score2, score3))
+        val winner = scores.findWinner()
+        val nameList = winner.carNames.map { it.name }
+        nameList[0] shouldBe "cc"
+    }
+
+    @Test
+    fun `자동차 경주 우승자는 두명 이상 일 수 있다`() {
+        val score1 = Score(Car(5, CarName("aa")))
+        val score2 = Score(Car(10, CarName("bb")))
+        val score3 = Score(Car(33, CarName("cc")))
+        val score4 = Score(Car(33, CarName("dd")))
+        val scores = Scores(listOf(score1, score2, score3, score4))
+        val winner = scores.findWinner()
+        winner.carNames.shouldContainExactly(
+            CarName("cc"), CarName("dd")
+        )
     }
 }

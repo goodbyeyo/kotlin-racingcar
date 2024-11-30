@@ -12,7 +12,8 @@ class RacingCarGame(
         val rounds = gameCondition.gameRound.number
         val allRoundScore = ArrayList<Scores>()
         repeat(rounds) {
-            val scores = Race(cars, strategy).raceOneRound()
+            val race = Race(cars, strategy)
+            val scores = race.raceOneRound()
             allRoundScore.add(scores)
         }
         return allRoundScore
