@@ -1,6 +1,6 @@
 package racingcar.domain
 
-class CarNames(carNames: List<CarName>) {
+class CarNames(carNames: List<CarName>) : Iterable<CarName> {
     private val _names: MutableList<CarName> = carNames.toMutableList()
 
     private val names: List<CarName>
@@ -12,5 +12,9 @@ class CarNames(carNames: List<CarName>) {
 
     fun name(index: Int): CarName {
         return names[index]
+    }
+
+    override fun iterator(): Iterator<CarName> {
+        return names.iterator()
     }
 }

@@ -16,10 +16,8 @@ class Cars(carNames: CarNames, carCount: PositiveNumber) {
     }
 
     private fun createCars(carNames: CarNames): List<Car> {
-        repeat(carNames.count()) {
-            val car = Car(carNames.name(it))
-            _cars.add(car)
-        }
+        val cars = carNames.map { Car(it)}
+        _cars.addAll(cars)
         return _cars
     }
 
@@ -28,11 +26,10 @@ class Cars(carNames: CarNames, carCount: PositiveNumber) {
     }
 
     fun move(strategy: NumberGeneratorStrategy): Scores {
-        val scores = Scores()
-        cars.forEach {
+        val scores = cars.map {
             it.move(strategy)
-            scores.addScore(Score(it))
+            Score(it)
         }
-        return scores
+        return Scores(scores)
     }
 }
