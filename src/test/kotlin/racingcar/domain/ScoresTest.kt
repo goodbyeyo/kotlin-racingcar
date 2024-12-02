@@ -48,7 +48,8 @@ class ScoresTest {
         val scores = Scores(listOf(score1, score2, score3, score4))
         val winner = scores.findWinner()
         winner.carNames.shouldContainExactly(
-            CarName("cc"), CarName("dd")
+            CarName("cc"),
+            CarName("dd"),
         )
     }
 }

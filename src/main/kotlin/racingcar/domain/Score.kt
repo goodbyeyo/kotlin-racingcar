@@ -1,12 +1,13 @@
 package racingcar.domain
 
-data class Score(
-    val car: Car,
-) {
-    constructor(point: Int) : this(Car(point))
+import racingcar.domain.Car.Companion.BLANK_NAME
 
-    val point: Int = car.point
-    val carName: String = car.carName.name
+data class Score(
+    val point: Int,
+    val carName: String,
+) {
+    constructor(car: Car) : this(car.point, car.carName.name)
+    constructor(point: Int) : this(point, BLANK_NAME)
 
     fun isSameScore(maxScore: Int): Boolean {
         return point == maxScore

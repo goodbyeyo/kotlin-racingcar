@@ -26,19 +26,12 @@ class Scores(scores: List<Score>) {
     fun findWinner(): Winners {
         val maxScore = findMaxScore()
         val winners = Winners()
-        _scores.forEach { score ->
-            if (score.isSameScore(maxScore)) {
-                winners.addWinner(score.carName)
-            }
-        }
+        _scores.filter { score -> score.isSameScore(maxScore) }
+            .forEach { winners.addWinner(it.carName) }
         return winners
     }
 
     private fun findMaxScore(): Int {
-        return let {
-            _scores.maxByOrNull {
-                it.point
-            }?.point ?: 0
-        }
+        return _scores.maxByOrNull { it.point }?.point ?: 0
     }
 }

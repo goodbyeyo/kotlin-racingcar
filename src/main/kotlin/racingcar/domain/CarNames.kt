@@ -1,7 +1,7 @@
 package racingcar.domain
 
 class CarNames(carNames: List<CarName>) : Iterable<CarName> {
-    private val _names: MutableList<CarName> = carNames.toMutableList()
+    private val _names = carNames
 
     private val names: List<CarName>
         get() = _names.toList()
