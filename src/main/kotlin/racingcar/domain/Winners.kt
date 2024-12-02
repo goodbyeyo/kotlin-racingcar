@@ -1,13 +1,12 @@
 package racingcar.domain
 
 class Winners(carNames: List<CarName>) {
-    private val _winners: MutableList<CarName> = carNames.toMutableList()
+    private val _names: MutableList<CarName> = carNames.toMutableList()
+    val names: List<CarName>
+        get() = _names.toList()
     constructor() : this(mutableListOf())
 
-    val carNames: List<CarName>
-        get() = _winners.toList()
-
     fun addWinner(carName: String) {
-        _winners.add(CarName(carName))
+        _names.add(CarName(carName))
     }
 }
