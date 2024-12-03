@@ -6,10 +6,15 @@ data class Score(
     val point: Int,
     val carName: String,
 ) {
-    constructor(car: Car) : this(car.point, car.carName.name)
-    constructor(point: Int) : this(point, BLANK_NAME)
-
     fun isSameScore(maxScore: Int): Boolean {
         return point == maxScore
     }
+}
+
+fun Score(car: Car): Score {
+    return Score(car.point, car.carName.name)
+}
+
+fun Score(point: Int): Score {
+    return Score(point, BLANK_NAME)
 }

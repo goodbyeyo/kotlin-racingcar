@@ -10,10 +10,6 @@ class CarNames(carNames: List<CarName>) : Iterable<CarName> {
         return names.size
     }
 
-    fun name(index: Int): CarName {
-        return names[index]
-    }
-
     override fun iterator(): Iterator<CarName> {
         return names.iterator()
     }
